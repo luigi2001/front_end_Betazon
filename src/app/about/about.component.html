@@ -1,0 +1,10 @@
+<div id="container">
+    <h2>I creatori di questa nuovissima startup nata ad ottobre 2022 sono:</h2>
+    <ul>
+        <li *ngFor="let tm of team">{{tm}}</li>
+    </ul>
+    <div class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="add" [(ngModel)]="value" placeholder="add" aria-label="add">
+        <button class="btn btn-outline-success my-2 my-sm-0" (click)="add()">+</button>
+    </div>
+</div>

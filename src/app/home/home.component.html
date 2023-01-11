@@ -1,0 +1,10 @@
+<button style="margin: 20px;" (click)="ngOnInit()">GET</button>
+<ul *ngFor="let ac of test.acquirente">
+    <li>{{ac.id}} - {{ac.name}}</li>
+</ul>
+<input type="text" [(ngModel)]="name" placeholder="nome">
+<input type="number" [(ngModel)]="id" placeholder="id">
+<!--<button style="margin: 20px;" (click)="Post()">POST</button>
+<button style="margin: 20px;" (click)="Put()">PUT</button>
+<button style="margin: 20px;" (click)="Delete()">DELETE</button>-->
+
