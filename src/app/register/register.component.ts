@@ -12,6 +12,8 @@ export class RegisterComponent {
   mail = "";
   pass = "";
   phone = "";
+  admin = "";
+  operatorCode = 0;
 
   constructor(private http: HttpClient){}
 
@@ -25,12 +27,18 @@ export class RegisterComponent {
             "mailAddress" : this.mail,
             "Phone": this.phone,
             "Password" : this.pass,
-            "ModifiedDate": new Date
+            "ModifiedDate": new Date,
+            "Admin": this.admin,
+            "OperatorCode" : this.operatorCode
           })
           .subscribe(resp =>{
             alert("Registrazione avvenuta con successo")
           },(err: HttpErrorResponse) => {
-            alert("errore " + err.status)
+            if(err.status == 404){
+              alert("il codice operatore digitato non è corretto")
+            }else{
+              alert("errore " + err.status)
+            }
           })
     }else{
       alert("devi compilare tutti i dati correttamente")
